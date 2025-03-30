@@ -1,10 +1,16 @@
 if status is-interactive
+    cd ~
+    nvm use
     # Commands to run in interactive sessions can go here
     export DOTNET_ROOT=$HOME/.dotnet
     fish_add_path -p $DOTNET_ROOT $DOTNET_ROOT/tools 
     fish_add_path -p /home/trn/.cargo/bin
     fish_add_path -p /home/trn/.local/share/JetBrains/Toolbox/scripts
+    fish_add_path -p /usr/local/go/bin
 
+    # Set nvm defaults
+    set --universal nvm_default_version v22.11.0
+    set --universal nvm_default_packages yarn @adinsure-ops/ops-cli @angular/cli prettier typescript   
 
     # Nightfox Color Palette
     # Style: carbonfox
