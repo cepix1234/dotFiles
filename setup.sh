@@ -1,6 +1,6 @@
 # Arch install software needed
-echo "Installing necessary plugins"
-sudo pacman -Syu neovim, ghostty, lazygit, fish, tmux, lua, git-delta
+echo "Installing necessary packages"
+sudo pacman -Syu neovim, ghostty, lazygit, fish, tmux, lua, git-delta, luarocks
 
 
 # dotnet
