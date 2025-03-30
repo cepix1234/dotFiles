@@ -2,51 +2,54 @@ font-family = Intel One Mono
 font-size = 10
 
 theme = ayu
-background-opacity = 0.95
-
 cursor-style-blink = false
 
-quick-terminal-position = center
-keybind = global:cmd+opt+ctrl+backslash=toggle_quick_terminal
-
-# title = " "
-macos-titlebar-style = tabs
-
+# Window settings
 window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
-
 window-colorspace = display-p3
 fullscreen = true
+window-decoration = false
+window-inherit-working-directory = true
+window-theme = dark
+window-save-state = always
 
-# Nightfox colors for Ghostty
-## name: carbonfox
-## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/carbonfox.ghostty
+# Mouse settings
+mouse-hide-while-typing = true
+copy-on-select = true
 
+# Background and transparency settings
 background = #161616
 foreground = #f2f4f8
 selection-background = #2a2a2a
 selection-foreground = #f2f4f8
+background-opacity = 0.95
 
-# normal
-palette = 0=#282828
-palette = 1=#ee5396
-palette = 2=#25be6a
-palette = 3=#08bdba
-palette = 4=#78a9ff
-palette = 5=#be95ff
-palette = 6=#33b1ff
-palette = 7=#dfdfe0
+# Font and cursor settings
+font-family = MesloLGDZ
+cursor-style = block
 
-# bright
-palette = 8=#484848
-palette = 9=#f16da6
-palette = 10=#46c880
-palette = 11=#2dc7c4
-palette = 12=#8cb6ff
-palette = 13=#c8a5ff
-palette = 14=#52bdff
-palette = 15=#e4e4e5
+# Color scheme (Dracula-inspired dark theme)
+#foreground = #f8f8f2
+#selection-foreground = #ffffff
+#selection-background = #44475a
+#cursor-color = #f8f8f2
 
-# extended colors
-palette = 16=#3ddbd9
+# ANSI Colors (Dracula)
+palette = 0=#21222c
+palette = 1=#ff5555
+palette = 2=#50fa7b
+palette = 3=#f1fa8c
+palette = 4=#bd93f9
+palette = 5=#ff79c6
+palette = 6=#8be9fd
+palette = 7=#f8f8f2
+palette = 8=#6272a4
+palette = 9=#ff6e6e
+palette = 10=#69ff94
+palette = 11=#ffffa5
+palette = 12=#d6acff
+palette = 13=#ff92df
+palette = 14=#a4ffff
+palette = 15=#ffffff
