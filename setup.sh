@@ -31,6 +31,11 @@ fish
 fisher install jorgebucaran/nvm.fish
 
 
+# set default shell
+echo "setting fish default shell"
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+
 #Symlink all dotfiles to .config 
 echo "Simbolic link dot files to ~/"
 if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
