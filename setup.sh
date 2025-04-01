@@ -13,7 +13,8 @@ echo "Simbolic link dot files to ~/"
 if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
 	rm -rf ~/.tmux
 fi
-ln -s $(realpath .tmux) ~/
+ln -s -f $(realpath .tmux)/.tmux.conf ~/
+cp $(realpath .tmux)/.tmux.conf.local ~/
 
 mkdir -p ~/.config
 for dir in ./.config/*
