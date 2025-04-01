@@ -4,7 +4,7 @@ if [ "$EUID" -ne 0 ]; then
 	echo "Run script as root."
 	exit 1
 else
-	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher
+	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc
 fi
 
 
