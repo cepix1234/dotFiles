@@ -33,7 +33,7 @@ fish fisherInstall.sh
 
 # set default shell
 echo "setting fish default shell"
-if [ $(systemd-detect-virt) -eq "wsl" ]; then
+if [[ $(grep -i Microsoft /proc/version) ]]; then
 	echo /usr/bin/fish | tee -a /etc/shells
 	chsh -s /usr/bin/fish
 else
