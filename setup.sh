@@ -15,6 +15,7 @@ if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
 fi
 ln -s $(realpath .tmux) ~/
 
+mkdir -p ~/.config
 for dir in ./.config/*
 do
  if [ -d ~/.config/$(basename $dir) ] || [ -L ~/.config/$(basename $dir) ]; then
