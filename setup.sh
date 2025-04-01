@@ -58,3 +58,8 @@ else
 	echo /usr/local/bin/fish | tee -a /etc/shells
 	chsh -s /usr/local/bin/fish
 fi
+
+
+# nvm
+echo "Setup nvm default v22.11.0"
+echo "v22.11.0" > ~/.nvmrc
