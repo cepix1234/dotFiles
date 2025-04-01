@@ -1,5 +1,6 @@
 if status is-interactive
     cd ~
+    nvm install
     nvm use
     # Commands to run in interactive sessions can go here
     export DOTNET_ROOT=$HOME/.dotnet
