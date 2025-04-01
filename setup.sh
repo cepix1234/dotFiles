@@ -7,6 +7,23 @@ else
 	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher
 fi
 
+
+#Symlink all dotfiles to .config 
+echo "Simbolic link dot files to ~/"
+if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
+	rm -rf ~/.tmux
+fi
+ln -s $(realpath .tmux) ~/
+
+for dir in ./.config/*
+do
+ if [ -d ~/.config/$(basename $dir) ] || [ -L ~/.config/$(basename $dir) ]; then
+	 rm -rf ~/.config/$(basename $dir)
+ fi
+ ln -s $(realpath $dir) ~/.config/
+done
+
+
 wait
 # dotnet
 echo "Install latest dotnet"
@@ -40,19 +57,3 @@ else
 	echo /usr/local/bin/fish | tee -a /etc/shells
 	chsh -s /usr/local/bin/fish
 fi
-
-
-#Symlink all dotfiles to .config 
-echo "Simbolic link dot files to ~/"
-if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
-	rm -rf ~/.tmux
-fi
-ln -s $(realpath .tmux) ~/
-
-for dir in ./.config/*
-do
- if [ -d ~/.config/$(basename $dir) ] || [ -L ~/.config/$(basename $dir) ]; then
-	 rm -rf ~/.config/$(basename $dir)
- fi
- ln -s $(realpath $dir) ~/.config/
-done
