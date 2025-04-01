@@ -28,12 +28,12 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 # fish nvm
 echo "Install nvm fish plugin"
 chmod +x fisherInstall.sh
-fish isherInstall.sh
+fish fisherInstall.sh
 
 
 # set default shell
 echo "setting fish default shell"
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
+echo /usr/local/bin/fish | tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
 #Symlink all dotfiles to .config 
