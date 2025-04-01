@@ -4,7 +4,7 @@ if [ "$EUID" -ne 0 ]; then
 	echo "Run script as root."
 	exit 1
 else
-	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc
+	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go
 fi
 
 
@@ -31,11 +31,6 @@ echo "Install latest dotnet"
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
-
-
-# golang
-echo "Install golang v 1.20.6"
-wget -q -O - https://git.io/vQhTU | bash
 
 
 # nvm
