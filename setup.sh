@@ -33,8 +33,14 @@ fish fisherInstall.sh
 
 # set default shell
 echo "setting fish default shell"
-echo /usr/local/bin/fish | tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+if [ $(systemd-detect-virt) -eq "wsl" ]; then
+	echo /usr/bin/fish | tee -a /etc/shells
+	chsh -s /usr/bin/fish
+else
+	echo /usr/local/bin/fish | tee -a /etc/shells
+	chsh -s /usr/local/bin/fish
+fi
+
 
 #Symlink all dotfiles to .config 
 echo "Simbolic link dot files to ~/"
