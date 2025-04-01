@@ -27,8 +27,8 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 
 # fish nvm
 echo "Install nvm fish plugin"
-fish
-fisher install jorgebucaran/nvm.fish
+chmod +x fisherInstall.sh
+fish isherInstall.sh
 
 
 # set default shell
