@@ -1,14 +1,14 @@
 # Arch install software needed
-echo "Installing necessary packages"
 if [ "$EUID" -ne 0 ]; then
 	echo "Run script as root."
 	exit 1
-else
-	pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go python
 fi
 
+#echo "Installing necessary packages"
+pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go python
 
-#Symlink all dotfiles to .config 
+
+#Symlink all dotfiles.
 echo "Simbolic link dot files to ~/"
 if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
 	rm ~/.tmux.conf
@@ -27,7 +27,6 @@ do
 done
 
 
-wait
 # dotnet
 echo "Install latest dotnet"
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
