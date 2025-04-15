@@ -27,7 +27,9 @@ return {
             require('telescope').extensions.git_worktree.git_worktree()
         end
         local create_worktree = function()
-            require('telescope').extensions.git_worktree.create_git_worktree()
+            local options = {}
+            options.prefix = vim.fn.getcwd();
+            require('telescope').extensions.git_worktree.create_git_worktree(options)
         end
 
         vim.keymap.set('n', '<leader>wG', create_worktree)
