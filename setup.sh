@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 #echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go python
+pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go python ripgrep
 
 
 #Symlink all dotfiles.
