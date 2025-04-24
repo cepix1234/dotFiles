@@ -7,11 +7,16 @@ return {
     },
     config = function()
         require("nvim-tree").setup {
+            hijack_netrw = false,
+            disable_netrw = false,
             view = {
                 width = {
                     min = 30,
                     max = -1
                 }
+            },
+            hijack_directories = {
+                enable = false,
             }
         }
         local api = require "nvim-tree.api"
