@@ -57,5 +57,5 @@ fi
 
 
 # nvm
-echo "Setup nvm default v22.11.0"
-echo "v22.11.0" > ~/.nvmrc
+echo "Setup nvm default v22.17.1"
+echo "v22.17.1" > ~/.nvmrc
