@@ -83,6 +83,7 @@ return {
             callback = function(ev)
                 local opts = { buffer = ev.buf }
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
                 vim.keymap.set("n", "gs", vim.lsp.buf.rename, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                 vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
