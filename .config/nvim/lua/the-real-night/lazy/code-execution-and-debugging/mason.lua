@@ -17,6 +17,7 @@ return {
             table.insert(pkgs_to_install, "rust-analyzer")
             table.insert(pkgs_to_install, "typescript-language-server")
             table.insert(pkgs_to_install, "netcoredbg")
+            table.insert(pkgs_to_install, "go-debug-adapter")
 
             local Command = require "mason.api.command"
             if not vim.tbl_isempty(pkgs_to_install) then

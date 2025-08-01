@@ -5,11 +5,11 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 #echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit fish tmux lua git-delta luarocks wget fisher gcc go python ripgrep
-
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm
 
 #Symlink all dotfiles.
 echo "Simbolic link dot files to ~/"
+echo "Simbolic link tmux config"
 if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
 	rm ~/.tmux.conf
     rm ~/.tmux.conf.local
@@ -17,6 +17,7 @@ fi
 ln -s -f $(realpath .tmux)/.tmux.conf ~/
 cp $(realpath .tmux)/.tmux.conf.local ~/
 
+echo "Simbolic link .config"
 mkdir -p ~/.config
 for dir in ./.config/*
 do
@@ -26,6 +27,25 @@ do
  ln -s $(realpath $dir) ~/.config/
 done
 
+echo "Simbolic link bin"
+mkdir -p ~/bin
+for dir in ./bin/*
+do
+ if [ -d ~/bin/$(basename $dir) ] || [ -L ~/bin/$(basename $dir) ]; then
+	 rm -rf ~/bin/$(basename $dir)
+ fi
+ ln -s $(realpath $dir) ~/bin/
+done
+chmod +x ~/bin/.local/scripts/tmux-sessionizer
+
+echo "Simbolic link zsh"
+for dir in ./zsh/*
+do
+ if [ -d ~/$(basename $dir) ] || [ -L ~/$(basename $dir) ]; then
+	 rm -rf ~/$(basename $dir)
+ fi
+ ln -s $(realpath $dir) ~/
+done
 
 # dotnet
 echo "Install latest dotnet"
@@ -33,29 +53,22 @@ wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
 
-
-# nvm
-echo "Install nvm"
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
-
-
-# fish nvm
-echo "Install nvm fish plugin"
-chmod +x fisherInstall.sh
-fish fisherInstall.sh
-
-
 # set default shell
-echo "setting fish default shell"
+echo "setting zsh default shell"
 if [[ $(grep -i Microsoft /proc/version) ]]; then
-	echo /usr/bin/fish | tee -a /etc/shells
-	chsh -s /usr/bin/fish
+	echo /usr/bin/zsh| tee -a /etc/shells
+	chsh -s /usr/bin/zsh
 else
-	echo /usr/local/bin/fish | tee -a /etc/shells
-	chsh -s /usr/local/bin/fish
+	echo /usr/local/bin/zsh | tee -a /etc/shells
+	chsh -s /usr/local/bin/zsh
 fi
-
 
 # nvm
 echo "Setup nvm default v22.17.1"
 echo "v22.17.1" > ~/.nvmrc
+echo "Setup nvm default packages"
+echo "yarn" > ~/.nvm/default-packages
+echo "@adinsure-ops/ops-cli" >> ~/.nvm/default-packages
+echo "@angular/cli" >> ~/.nvm/default-packages
+echo "prettier" >> ~/.nvm/default-packages
+echo "typescript" >> ~/.nvm/default-packages

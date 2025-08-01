@@ -36,11 +36,12 @@ local dir_change_function = function(dir)
     local command = string.format("%s %s", dirChangeCommand, dir)
     sendKeys(command, termianlWindowId)
     clear_terminal()
-    if lazyGitInit == false then
-        sendKeys(command, lazygitWindowId)
-        sendKeys("lazygit", lazygitWindowId)
-        lazyGitInit = true
+    if lazyGitInit == true then
+        sendKeys("q", lazygitWindowId)
     end
+    sendKeys(command, lazygitWindowId)
+    sendKeys("lazygit", lazygitWindowId)
+    lazyGitInit = true
 end
 
 vim.notify('resut:' .. #tmuxWindows)

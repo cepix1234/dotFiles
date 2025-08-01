@@ -1,6 +1,5 @@
 local dap = require("dap")
 if not dap.adapters["coreclr"] then
-    local Command = require "mason.api.command"
     require("dap").adapters["coreclr"] = {
         type = "executable",
         command = "netcoredbg",
