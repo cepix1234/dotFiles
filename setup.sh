@@ -37,7 +37,7 @@ do
  ln -s $(realpath $dir) ~/bin/
 done
 chmod +x ~/bin/.local/scripts/tmux-sessionizer
-chmod +x ~/bin/.local/git-clone-bare-worktree.sh
+chmod +x ~/bin/.local/scripts/git-clone-bare-worktree.sh
 
 echo "Simbolic link zsh"
 for dir in ./zsh/.*
