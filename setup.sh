@@ -29,7 +29,7 @@ done
 
 echo "Simbolic link bin"
 mkdir -p ~/bin
-for dir in ./bin/*
+for dir in ./bin/.*
 do
  if [ -d ~/bin/$(basename $dir) ] || [ -L ~/bin/$(basename $dir) ]; then
 	 rm -rf ~/bin/$(basename $dir)
@@ -40,7 +40,7 @@ chmod +x ~/bin/.local/scripts/tmux-sessionizer
 chmod +x ~/bin/.local/git-clone-bare-worktree.sh
 
 echo "Simbolic link zsh"
-for dir in ./zsh/*
+for dir in ./zsh/.*
 do
  if [ -d ~/$(basename $dir) ] || [ -L ~/$(basename $dir) ]; then
 	 rm -rf ~/$(basename $dir)
