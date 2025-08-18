@@ -56,7 +56,6 @@ echo "Install latest dotnet"
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
-dotnet tool install -g EasyDotnet
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 
 # set default shell
@@ -73,6 +72,7 @@ fi
 echo "Setup nvm default v22.17.1"
 echo "v22.17.1" > ~/.nvmrc
 echo "Setup nvm default packages"
+mkdir -p ~/.nvm
 echo "yarn" > ~/.nvm/default-packages
 echo "@adinsure-ops/ops-cli" >> ~/.nvm/default-packages
 echo "@angular/cli" >> ~/.nvm/default-packages
