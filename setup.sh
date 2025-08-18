@@ -49,11 +49,7 @@ do
 done
 
 echo "Simbolic link .tmux-sessionize"
- if [ -d ~/$(basename $dir) ] || [ -L ~/$(basename $dir) ]; then
-	 rm  ~/$(basename $dir)
- fi
- ln -s $(realpath .tmux/.tmux-sessionizer) ~/
-done
+ln -s $(realpath .tmux/.tmux-sessionizer) ~/
 
 # dotnet
 echo "Install latest dotnet"
