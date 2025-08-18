@@ -5,7 +5,17 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh jq
+
+# set default shell
+echo "setting zsh default shell"
+if [[ $(grep -i Microsoft /proc/version) ]]; then
+	echo /usr/bin/zsh| tee -a /etc/shells
+	chsh -s /usr/bin/zsh
+else
+	echo /usr/local/bin/zsh | tee -a /etc/shells
+	chsh -s /usr/local/bin/zsh
+fi
 
 #Symlink all dotfiles.
 echo "Simbolic link dot files to ~/"
@@ -58,15 +68,9 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 
-# set default shell
-echo "setting zsh default shell"
-if [[ $(grep -i Microsoft /proc/version) ]]; then
-	echo /usr/bin/zsh| tee -a /etc/shells
-	chsh -s /usr/bin/zsh
-else
-	echo /usr/local/bin/zsh | tee -a /etc/shells
-	chsh -s /usr/local/bin/zsh
-fi
+# nvm
+echo "Install nvm"
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 # nvm
 echo "Setup nvm default v22.17.1"
@@ -81,4 +85,5 @@ echo "typescript" >> ~/.nvm/default-packages
 
 #Git
 echo "Adding clone-for-worktrees alias"
-echo '[alias]\n	clone-for-worktrees = "!sh ~/bin/.local/scripts/git-clone-bare-worktree.sh"' >> ~/.gitconfig
+echo '[alias]' >> ~/.gitconfig
+echo '	clone-for-worktrees = "!sh ~/bin/.local/scripts/git-clone-bare-worktree.sh"' >> ~/.gitconfig
