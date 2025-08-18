@@ -6,7 +6,10 @@ path=($DOTNET_ROOT/tools  $path)
 path=(/home/trn/.cargo/bin $path)
 path=(/home/trn/.local/share/JetBrains/Toolbox/scripts $path)
 path=(/usr/local/go/bin $path)
+path=($HOME/.nvm $path)
 export PATH
+
+VIM = "nvim"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -80,6 +83,7 @@ ENABLE_CORRECTION="true"
 plugins=(
     git
     zsh-autosuggestions
+    nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -113,8 +117,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-cd ~
-nvm install
-nvm use
-
-tmux
+if [ -z "$ZSH_CUSTOM_INIT" ]; then
+    nvm install
+    nvm use
+    
+    cd ~
+    tmux
+    
+    ZSH_CUSTOM_INIT=true
+    export ZSH_CUSTOM_INIT
+fi

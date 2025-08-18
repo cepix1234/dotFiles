@@ -4,8 +4,8 @@ if [ "$EUID" -ne 0 ]; then
 	exit 1
 fi
 
-#echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm
+echo "Installing necessary packages"
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
 
 #Symlink all dotfiles.
 echo "Simbolic link dot files to ~/"
@@ -37,6 +37,7 @@ do
  ln -s $(realpath $dir) ~/bin/
 done
 chmod +x ~/bin/.local/scripts/tmux-sessionizer
+chmod +x ~/bin/.local/git-clone-bare-worktree.sh
 
 echo "Simbolic link zsh"
 for dir in ./zsh/*
@@ -47,11 +48,20 @@ do
  ln -s $(realpath $dir) ~/
 done
 
+echo "Simbolic link .tmux-sessionize"
+ if [ -d ~/$(basename $dir) ] || [ -L ~/$(basename $dir) ]; then
+	 rm  ~/$(basename $dir)
+ fi
+ ln -s $(realpath .tmux/.tmux-sessionizer) ~/
+done
+
 # dotnet
 echo "Install latest dotnet"
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
+dotnet tool install -g EasyDotnet
+wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 
 # set default shell
 echo "setting zsh default shell"
@@ -72,3 +82,7 @@ echo "@adinsure-ops/ops-cli" >> ~/.nvm/default-packages
 echo "@angular/cli" >> ~/.nvm/default-packages
 echo "prettier" >> ~/.nvm/default-packages
 echo "typescript" >> ~/.nvm/default-packages
+
+#Git
+echo "Adding clone-for-worktrees alias"
+echo '[alias]\n	clone-for-worktrees = "!sh ~/bin/.local/scripts/git-clone-bare-worktree.sh"' >> ~/.gitconfig
