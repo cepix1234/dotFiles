@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh jq
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
 
 # set default shell
 echo "setting zsh default shell"
@@ -67,12 +67,13 @@ wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --version latest
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
+source ~/.zshrc
+dotnet tool install -g EasyDotnet
 
 # nvm
 echo "Install nvm"
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source /usr/share/nvm/init-nvm.sh
 
-# nvm
 echo "Setup nvm default v22.17.1"
 echo "v22.17.1" > ~/.nvmrc
 echo "Setup nvm default packages"

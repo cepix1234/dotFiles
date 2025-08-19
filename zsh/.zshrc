@@ -118,7 +118,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ -z "$ZSH_CUSTOM_INIT" ]; then
-    dotnet tool install -g EasyDotnet
     nvm install
     nvm use
     
