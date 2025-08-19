@@ -9,8 +9,6 @@ path=(/usr/local/go/bin $path)
 path=($HOME/.nvm $path)
 export PATH
 
-VIM = "nvim"
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
