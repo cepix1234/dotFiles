@@ -121,8 +121,9 @@ if [ -z "$ZSH_CUSTOM_INIT" ]; then
     nvm use
     
     cd ~
-    tmux
-    
+
     ZSH_CUSTOM_INIT=true
     export ZSH_CUSTOM_INIT
+
+    tmux
 fi
