@@ -65,10 +65,8 @@ ln -s $(realpath .tmux/.tmux-sessionizer) ~/
 echo "Install latest dotnet"
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
-./dotnet-install.sh --version latest
+./dotnet-install.sh --channel 9.0
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
-source ~/.zshrc
-dotnet tool install -g EasyDotnet
 
 # nvm
 echo "Install nvm"
