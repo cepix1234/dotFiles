@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq ttf-hack-nerd
 
 # set default shell
 echo "setting zsh default shell"
