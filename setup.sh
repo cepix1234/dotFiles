@@ -27,7 +27,11 @@ fi
 
 #Symlink all dotfiles.
 echo "Simbolic link dot files to ~/"
-echo "Simbolic link tmux config" if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then rm ~/.tmux.conf rm ~/.tmux.conf.local fi
+echo "Simbolic link tmux config" 
+if [ -d ~/.tmux ] || [ -L ~/.tmux ]; then
+	rm ~/.tmux.conf
+    rm ~/.tmux.conf.local
+fi
 ln -s -f $(realpath .tmux)/.tmux.conf ~/
 cp $(realpath .tmux)/.tmux.conf.local ~/
 
