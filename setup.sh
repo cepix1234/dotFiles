@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
+pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq openssh
 
 echo "Check en_US locales are generated"
 enlocales="$(locale -a | grep en_US.utf8)"
