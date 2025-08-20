@@ -8,7 +8,7 @@ echo "Installing necessary packages"
 pacman --noconfirm -Syu neovim ghostty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq
 
 echo "Check en_US locales are generated"
-enlocales= en_US.UTF-8 UTF-8$(locale -a | grep en_US.utf8)
+enlocales="$(locale -a | grep en_US.utf8)"
 if [[ -z "$enlocales" ]]; then
     echo "Generate en_US locales"
     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
