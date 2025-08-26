@@ -76,6 +76,9 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 9.0
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 
+# git settins
+git config --global core.editor "nvim"
+
 # nvm
 echo "Install nvm"
 source /usr/share/nvm/init-nvm.sh
