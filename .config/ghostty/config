@@ -1,7 +1,6 @@
 font-family = Intel One Mono
 font-size = 10
 
-theme = ayu
 cursor-style-blink = false
 
 # Window settings
@@ -52,3 +51,8 @@ palette = 12=#d6acff
 palette = 13=#ff92df
 palette = 14=#a4ffff
 palette = 15=#ffffff
+
+# background
+background-image = ~/.config/ghostty/back-ground.jpg
+background-image-opacity = 0.03
+background-image-fit = stretch
