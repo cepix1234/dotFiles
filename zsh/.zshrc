@@ -117,6 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [ -z "$ZSH_CUSTOM_INIT" ]; then
     dotnet tool install -g EasyDotnet
+    dotnet tool install -g csharp-ls
     nvm install
     nvm use
     
