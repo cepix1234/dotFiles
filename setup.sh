@@ -78,6 +78,7 @@ wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 
 # git settins
 git config --global core.editor "nvim"
+git config --global merge.conflictstyle diff3
 
 # nvm
 echo "Install nvm"
