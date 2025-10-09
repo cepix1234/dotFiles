@@ -24,11 +24,11 @@ return {
                         conditionals = "NONE",
                         constants = "NONE",
                         functions = "NONE",
-                        keywords = "NONE",
+                        keywords = "bold",
                         numbers = "NONE",
                         operators = "NONE",
                         strings = "NONE",
-                        types = "NONE",
+                        types = "italic,bold",
                         variables = "NONE",
                     },
                     inverse = { -- Inverse highlight for different types
