@@ -37,5 +37,9 @@ return {
             local path = node.type == "directory" and node.absolute_path or vim.fs.dirname(node.absolute_path)
             require("easy-dotnet").create_new_item(path)
         end, opts('Create file from dotnet template'))
+
+        vim.keymap.set('n', '<C-d>SA', function()
+            require("easy-dotnet").new()
+        end, opts('Create file from dotnet template'))
     end,
 }
