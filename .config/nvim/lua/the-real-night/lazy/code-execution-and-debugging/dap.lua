@@ -5,6 +5,7 @@ return {
             require("the-real-night.lazy.code-execution-and-debugging.dap.node")
             require("the-real-night.lazy.code-execution-and-debugging.dap.go")
             require("the-real-night.lazy.code-execution-and-debugging.dap.dotNet")
+            require("the-real-night.lazy.code-execution-and-debugging.dap.cpp")
             vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
             vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
             vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
