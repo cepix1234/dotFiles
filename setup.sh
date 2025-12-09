@@ -88,7 +88,7 @@ echo "Setup nvm default v22.17.1"
 echo "v22.17.1" > ~/.nvmrc
 echo "Setup nvm default packages"
 mkdir -p ~/.nvm
-echo "yarn" > ~/.nvm/default-packages
+echo "corepack" > ~/.nvm/default-packages
 echo "@adinsure-ops/ops-cli" >> ~/.nvm/default-packages
 echo "@angular/cli" >> ~/.nvm/default-packages
 echo "prettier" >> ~/.nvm/default-packages
