@@ -50,5 +50,6 @@
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "08e65d82d48416ab140b3dea26eea4fb9739bc47" },
   "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
-  "undotree": { "branch": "master", "commit": "0f1c9816975b5d7f87d5003a19c53c6fd2ff6f7f" }
+  "undotree": { "branch": "master", "commit": "0f1c9816975b5d7f87d5003a19c53c6fd2ff6f7f" },
+  "vscode-diff.nvim": { "branch": "main", "commit": "6475f9164aceafbe156fd66374f85d0f23aea254" }
 }
