@@ -9,6 +9,8 @@ return {
     },
 
     config = function()
+        local builtin = require('telescope.builtin')
+        local actions = require('telescope.actions')
         require('telescope').setup({
             defaults = {
                 vimgrep_arguments = {
@@ -21,11 +23,14 @@ return {
                     '--smart-case',
                     '--hidden',
                 },
+                mappings = {
+                    n = {
+                        ["dd"] = actions.delete_buffer,
+                    },
+                }
             }
         })
 
-
-        local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', function()
             builtin.find_files({ cwd = vim.fn.getcwd() })
         end)
@@ -45,6 +50,10 @@ return {
         vim.keymap.set('n', '<leader>ps', function()
             builtin.grep_string({ search = vim.fn.input("Grep > "), cwd = vim.fn.getcwd() })
         end)
+
+
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
+
         require("telescope").load_extension("lazygit")
     end,
 }
