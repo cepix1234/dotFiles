@@ -15,7 +15,7 @@ return {
                 autochdir = true,
                 start_in_insert = false,
                 insert_mappings = false,
-                erminal_mappings = true,
+                terminal_mappings = false,
                 persist_size = true,
                 persist_mode = true,
                 direction = 'vertical',
