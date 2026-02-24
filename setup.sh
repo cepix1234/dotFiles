@@ -93,6 +93,7 @@ echo "@adinsure-ops/ops-cli" >> ~/.nvm/default-packages
 echo "@angular/cli" >> ~/.nvm/default-packages
 echo "prettier" >> ~/.nvm/default-packages
 echo "typescript" >> ~/.nvm/default-packages
+echo "tree-sitter-cli" >> ~/.nvm/default-packages
 
 #Git
 echo "Adding clone-for-worktrees alias"
