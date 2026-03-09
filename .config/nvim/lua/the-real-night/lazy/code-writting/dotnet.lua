@@ -27,6 +27,15 @@ return
             -- You should define this function to return a hardcoded path for a performance improvement 🚀
             get_sdk_path = get_sdk_path,
             ---@type TestRunnerOptions
+            lsp = {
+                enabled = true,                      -- Enable builtin roslyn lsp
+                preload_roslyn = false,              -- Start loading roslyn before any buffer is opened
+                roslynator_enabled = true,           -- Automatically enable roslynator analyzer
+                easy_dotnet_analyzer_enabled = true, -- Enable roslyn analyzer from easy-dotnet-server
+                auto_refresh_codelens = true,
+                analyzer_assemblies = {},            -- Any additional roslyn analyzers you might use like SonarAnalyzer.CSharp
+                config = {},
+            },
             test_runner = {
                 ---@type "split" | "vsplit" | "float" | "buf"
                 viewmode = "float",
