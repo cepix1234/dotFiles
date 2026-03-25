@@ -50,7 +50,5 @@ return {
 
 
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
-
-        require("telescope").load_extension("lazygit")
     end,
 }

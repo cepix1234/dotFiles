@@ -17,9 +17,9 @@ return {
         Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
             vim.notify('Moved:' .. prev_path .. '  ~>  ' .. path)
             update_on_switch(path, prev_path)
-            local nvimTreeActions = require "nvim-tree.actions"
-            nvimTreeActions.root.change_dir.fn(path)
-            nvimTreeActions.tree.open.fn()
+            --local nvimTreeActions = require "nvim-tree.actions"
+            --nvimTreeActions.root.change_dir.fn(path)
+            --nvimTreeActions.tree.open.fn()
             local tmuxUtil = require "the-real-night.tmux-setup"
             tmuxUtil.dir_change(path)
         end)
