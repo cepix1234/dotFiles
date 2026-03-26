@@ -12,6 +12,9 @@ return {
             require("neo-tree").setup({
                 ---...other options
                 filesystem = {
+                    filtered_items = {
+                        hide_dotfiles = false,
+                    },
                     window = {
                         mappings = {
                             -- Make the mapping anything you want
