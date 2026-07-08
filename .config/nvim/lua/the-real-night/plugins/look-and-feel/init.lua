@@ -1,0 +1,6 @@
+require("the-real-night.plugins.look-and-feel.color-scheme")
+require("the-real-night.plugins.look-and-feel.hlchunk")
+require("the-real-night.plugins.look-and-feel.local-highlight")
+require("the-real-night.plugins.look-and-feel.lualine")
+require("the-real-night.plugins.look-and-feel.todo-comments")
+require("the-real-night.plugins.look-and-feel.indent-line")

@@ -25,7 +25,6 @@ selection-foreground = #f2f4f8
 background-opacity = 0.95
 
 # Font and cursor settings
-font-family = MesloLGDZ
 cursor-style = block
 
 # Color scheme (Dracula-inspired dark theme)

@@ -1,0 +1,6 @@
+require("the-real-night.plugins.look-and-feel")
+require("the-real-night.plugins.navigation")
+require("the-real-night.plugins.git-integration")
+require("the-real-night.plugins.misc")
+require("the-real-night.plugins.code-writing")
+require("the-real-night.plugins.code-execution-and-debugging")
