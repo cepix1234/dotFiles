@@ -4,12 +4,30 @@ vim.pack.add({
     "https://github.com/nvim-telescope/telescope-file-browser.nvim"
 })
 
+local actions = require("telescope.actions")
+local actions_state = require("telescope.actions.state")
 
-local easyItem = function(state)
-    local node = state.tree:get_node()
-    local path = node.type == "directory" and node.path or vim.fs.dirname(node.path)
+local easyItem = function(prompt_bufnr)
+    local entry = actions_state.get_selected_entry()
+    if not entry then
+        return
+    end
+
+    local path
+
+    if entry.Path and entry.Path:is_dir() then
+        path = entry.Path:absolute()
+    else
+        path = vim.fs.dirname(entry.path or entry.value or entry.filename)
+    end
+
     require("easy-dotnet").create_new_item(path, function()
-        require("neo-tree.sources.manager").refresh(state.name)
+        actions.close(prompt_bufnr)
+
+        require("telescope").extensions.file_browser.file_browser({
+            path = path,
+            select_buffer = true,
+        })
     end)
 end
 
@@ -18,11 +36,13 @@ local easyNew = function()
 end
 
 local copyFilePath = function(state)
-    -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
-    -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
-    local node = state.tree:get_node()
-    local filepath = node:get_id()
-    local filename = node.name
+    local entry = actions_state.get_selected_entry()
+    if not entry then
+        return
+    end
+
+    local filepath = entry.path or entry.value or entry.filename
+    local filename = vim.fs.basename(filepath)
     local modify = vim.fn.fnamemodify
 
     local results = {

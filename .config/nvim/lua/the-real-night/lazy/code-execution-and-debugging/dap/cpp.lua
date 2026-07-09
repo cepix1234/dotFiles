@@ -1,6 +1,6 @@
-local dap = require("dap")
+local dap = require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger")
 if not dap.adapters["llbd"] then
-    require("dap").adapters["llbd"] = {
+    require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger").adapters["llbd"] = {
         type = "executable",
         command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
         name = "lldb",

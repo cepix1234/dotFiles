@@ -1,6 +1,6 @@
-local dap = require("dap")
+local dap = require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger")
 if not dap.adapters["pwa-node"] then
-    require("dap").adapters["pwa-node"] = {
+    require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger").adapters["pwa-node"] = {
         type = "server",
         host = "localhost",
         port = "${port}",

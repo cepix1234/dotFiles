@@ -16,7 +16,7 @@ local function rebuild_project(co, path)
 end
 
 
-local dap = require("dap")
+local dap = require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger")
 
 require("easy-dotnet.netcoredbg").register_dap_variables_viewer() -- special variables viewer specific for .NET
 local dotnet = require("easy-dotnet")

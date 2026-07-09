@@ -29,9 +29,9 @@ local function filtered_pick_process()
     return require("dap.utils").pick_process(opts)
 end
 
-local dap = require("dap")
+local dap = require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger")
 if not dap.adapters["go"] then
-    require("dap").adapters["go"] = {
+    require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger").adapters["go"] = {
         type = "server",
         host = "localhost",
         port = "${port}",

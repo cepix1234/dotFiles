@@ -7,7 +7,8 @@ return {
     config = function()
         require("dapui").setup()
 
-        local dap, dapui = require("dap"), require("dapui")
+        local dap, dapui = require(".config.nvim.lua.the-real-night.plugins.code-execution-and-debugging.dap-debugger"),
+            require("dapui")
 
         dap.listeners.after.event_initialized["dapui_config"] = function()
             dapui.open({})
