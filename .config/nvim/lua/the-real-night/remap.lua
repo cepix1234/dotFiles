@@ -1,2 +1,2 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", "<cmd>Oil<cr>")
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
