@@ -80,7 +80,7 @@ require('telescope').setup({
             hijack_netrw = true,
             select_buffer = true,
             hidden = true,
-            auto_depth = 2,
+            auto_depth = false,
             grouped = true,
             depth = 1,
             mappings = {
