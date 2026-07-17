@@ -7,6 +7,7 @@ local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 require('telescope').setup({
     defaults = {
+        winblend = 15,
         vimgrep_arguments = {
             'rg',
             '--color=never',

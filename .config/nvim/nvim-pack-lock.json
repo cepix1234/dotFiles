@@ -52,6 +52,10 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "fyler.nvim": {
+      "rev": "c1026d06e11ed0d78bb91010bd6f84b2d2ea241b",
+      "src": "https://github.com/FylerOrg/fyler.nvim"
+    },
     "git-worktree.nvim": {
       "rev": "3ad8c17a3d178ac19be925284389c14114638ebb",
       "src": "https://github.com/polarmutex/git-worktree.nvim",
