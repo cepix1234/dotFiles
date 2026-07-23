@@ -84,6 +84,10 @@ git config --global merge.conflictstyle diff3
 echo "Install nvm"
 source /usr/share/nvm/init-nvm.sh
 
+# claude 
+echo "Install claude"
+curl -fsSL https://claude.ai/install.sh | bash
+
 echo "Setup nvm default v22.17.1"
 echo "v22.17.1" > ~/.nvmrc
 echo "Setup nvm default packages"
@@ -94,6 +98,7 @@ echo "@angular/cli" >> ~/.nvm/default-packages
 echo "prettier" >> ~/.nvm/default-packages
 echo "typescript" >> ~/.nvm/default-packages
 echo "tree-sitter-cli" >> ~/.nvm/default-packages
+echo "@agentclientprotocol/claude-agent-acp" >> ~/.nvm/default-packages
 
 #Git
 echo "Adding clone-for-worktrees alias"
