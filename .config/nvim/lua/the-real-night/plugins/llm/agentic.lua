@@ -6,6 +6,10 @@ vim.keymap.set('n', '<leader>cd', function()
     require("agentic").toggle()
 end)
 
+vim.keymap.set('n', '<leader>cs', function()
+    require("agentic").stop_generation()
+end)
+
 vim.keymap.set({ 'n', 'v' }, '<leader>c`', function()
     require("agentic").new_session()
 end)
