@@ -89,7 +89,7 @@ echo "Install claude"
 curl -fsSL https://claude.ai/install.sh | bash
 
 echo "Setup nvm default v22.17.1"
-echo "v22.17.1" > ~/.nvmrc
+echo "v22.23.2" > ~/.nvmrc
 echo "Setup nvm default packages"
 mkdir -p ~/.nvm
 echo "corepack" > ~/.nvm/default-packages

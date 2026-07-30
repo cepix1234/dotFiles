@@ -7,6 +7,7 @@ path=(/home/trn/.cargo/bin $path)
 path=(/home/trn/.local/share/JetBrains/Toolbox/scripts $path)
 path=(/usr/local/go/bin $path)
 path=($HOME/.nvm $path)
+path=($HOME/.local/bin $path)
 export PATH
 
 # Path to your Oh My Zsh installation.
