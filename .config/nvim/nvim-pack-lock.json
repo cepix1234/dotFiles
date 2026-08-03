@@ -201,6 +201,10 @@
     "undotree": {
       "rev": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d",
       "src": "https://github.com/mbbill/undotree"
+    },
+    "yazi.nvim": {
+      "rev": "3a5187b93d6f9fa1287ad63571df53e31a5c26bb",
+      "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }
 }

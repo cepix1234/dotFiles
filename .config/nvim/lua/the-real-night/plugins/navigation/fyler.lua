@@ -25,6 +25,8 @@ fyler.setup({
     win_opts = {},
     -- Buffer kind to use globally.
     kind = 'floating',
+    -- Don't hijack directory buffers; let telescope-file-browser handle that
+    use_as_default_explorer = false,
     -- Per-kind preset overrides. Each preset can contain mappings,
     -- buf_opts, win_opts, and any window layout fields
     kind_presets = {
