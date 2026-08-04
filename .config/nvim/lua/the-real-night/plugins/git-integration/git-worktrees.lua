@@ -3,6 +3,7 @@ vim.pack.add({
     "https://github.com/stevearc/overseer.nvim",
     { src = "https://github.com/polarmutex/git-worktree.nvim", version = "2.1.0" },
 })
+local rootDir = vim.fn.getcwd() .. '/';
 
 vim.g.git_worktree_log_level = "trace"
 require('telescope').load_extension('git_worktree')
@@ -27,7 +28,7 @@ local switch_worktree = function()
 end
 local create_worktree = function()
     local options = {}
-    options.prefix = vim.fn.getcwd() .. '/';
+    options.prefix = rootDir;
     require('telescope').extensions.git_worktree.create_git_worktree(options)
 end
 
