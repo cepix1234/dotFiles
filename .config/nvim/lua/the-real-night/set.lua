@@ -33,3 +33,20 @@ vim.opt.colorcolumn = "80"
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 vim.opt.cursorline = true
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        if #vim.fn.expand("%:p") > 250 then
+            vim.opt_local.undofile = false
+        end
+    end,
+})
+
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = "» ",
+    trail = "·",
+    nbsp = "␣",
+    extends = "…",
+    precedes = "…",
+}
