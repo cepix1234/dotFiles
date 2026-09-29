@@ -1,0 +1,25 @@
+[note]
+
+template = "default.md"
+
+[extra]
+
+[format.markdown]
+
+
+hashtags = true
+colon-tags = false
+multiword-tags = false
+
+[tool]
+
+[lsp]
+
+[lsp.diagnostics]
+dead-link = "error"
+
+[lsp.completion]
+
+[filter]
+
+[alias]

@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export DOTNET_ROOT=$HOME/.dotnet
+export ZK_NOTEBOOK_DIR=$HOME/MyNotes
 path=($DOTNET_ROOT $path)
 path=($DOTNET_ROOT/tools  $path)
 path=(/home/trn/.cargo/bin $path)

@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "Installing necessary packages"
-pacman --noconfirm -Syu neovim ghostty kitty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq openssh rustup
+pacman --noconfirm -Syu neovim ghostty kitty lazygit tmux lua git-delta luarocks wget gcc go python ripgrep fzf zsh nvm jq openssh rustup zk
 
 echo "Check en_US locales are generated"
 enlocales="$(locale -a | grep en_US.utf8)"
@@ -87,6 +87,11 @@ source /usr/share/nvm/init-nvm.sh
 # claude 
 echo "Install claude"
 curl -fsSL https://claude.ai/install.sh | bash
+
+# nomkdir ~/MyNotestes
+mkdir ~/MyNotes
+ln -s $(realpath .zk) ~/MyNotes/
+zk index -W ~/MyNotes
 
 echo "Setup nvm default v22.17.1"
 echo "v22.23.2" > ~/.nvmrc
