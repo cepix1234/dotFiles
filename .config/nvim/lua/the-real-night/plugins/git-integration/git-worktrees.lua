@@ -40,7 +40,22 @@ local function make_worktree(branch)
     local default_path = rootDir .. branch
     vim.ui.input({ prompt = 'Path > ', default = default_path }, function(p)
         if not p or p == '' then return end
-        git_worktree.create_worktree(p, branch, 'origin')
+        require('telescope.builtin').git_branches({
+            prompt_title = 'Select upstream',
+            attach_mappings = function(prompt_bufnr, map)
+                actions.select_default:replace(function()
+                    local selected_entry = action_state.get_selected_entry()
+                    local current_line = action_state.get_current_line()
+
+                    actions.close(prompt_bufnr)
+
+                    local upstream = selected_entry ~= nil and selected_entry.value or current_line
+                    git_worktree.create_worktree(p, branch, upstream)
+                end)
+
+                return true -- keep telescope's other default mappings
+            end,
+        })
     end)
 end
 
@@ -50,7 +65,7 @@ end
 
 local create_worktree = function()
     require('telescope.builtin').git_branches({
-        prompt_title = 'Create worktree  (<CR> existing, <C-a> new from prompt)',
+        prompt_title = 'Create worktree',
         attach_mappings = function(prompt_bufnr, map)
             -- <CR>: existing local/remote branch
             actions.select_default:replace(function()
