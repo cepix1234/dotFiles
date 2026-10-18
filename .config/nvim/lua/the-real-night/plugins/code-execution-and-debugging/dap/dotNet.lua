@@ -32,7 +32,8 @@ local function ensure_dll()
 end
 
 for _, value in ipairs({ "cs", "fsharp" }) do
-    dap.configurations[value] = {
+    dap.configurations[value] = dap.configurations[value] or {}
+    vim.list_extend(dap.configurations[value], {
         {
             type = "coreclr",
             name = "Program",
@@ -62,7 +63,7 @@ for _, value in ipairs({ "cs", "fsharp" }) do
                 return res.process_id
             end
         }
-    }
+    })
 end
 
 -- Reset debug_dll after each terminated session
