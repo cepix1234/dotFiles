@@ -27,7 +27,7 @@ Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
 end)
 
 local function slugify_branch(name)
-    name = vim.trim(name):lower()
+    name = vim.trim(name)
     name = name:gsub('%s+', '-')                  -- spaces -> dashes
     name = name:gsub('[^%w%-%./_]', '')           -- drop chars git dislikes
     name = name:gsub('%-+', '-')                  -- collapse repeated dashes
